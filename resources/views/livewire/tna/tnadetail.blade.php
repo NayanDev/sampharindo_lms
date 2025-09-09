@@ -71,10 +71,10 @@
                             <thead>
                                 <tr>
                                     <th width="5%">No</th>
-                                    <th>Years</th>
-                                    <th>Status</th>
-                                    <th>Note</th>
-                                    <th>Created</th>
+                                    <th>Workshop</th>
+                                    <th>Employee</th>
+                                    <th>Department</th>
+                                    <th>Workshop Date</th>
                                     <th class="sorting" width="15%">Actions</th>
                                 </tr>
                             </thead>
@@ -116,10 +116,10 @@
                             <thead>
                                 <tr>
                                     <th width="5%">No</th>
-                                    <th>Years</th>
-                                    <th>Status</th>
-                                    <th>Note</th>
-                                    <th>Created</th>
+                                    <th>Workshop</th>
+                                    <th>Employee</th>
+                                    <th>Department</th>
+                                    <th>Workshop Date</th>
                                     <th class="sorting" width="15%">Actions</th>
                                 </tr>
                             </thead>

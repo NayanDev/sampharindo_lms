@@ -24,7 +24,9 @@ class PositionSeeder extends Seeder
         ];
 
         foreach ($positions as $name) {
-            Position::create(['name' => $name]);
+            Position::create(
+                ['name' => $name,
+                'department_id' => 1]);
         }
     }
 }

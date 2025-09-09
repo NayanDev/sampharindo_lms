@@ -39,6 +39,15 @@
 
                                                         <form wire:submit.prevent="store" role="#">
                                                             <div class="form-group">
+                                                                <label>Department</label>
+                                                                        <select wire:model="department_id" class="form-control m-b">
+                                                                            <option>-- Choose Department --</option>
+                                                                            @foreach($departments as $data)
+                                                                                <option value="{{ $data->id }}">{{ $data->name }}</option>
+                                                                            @endforeach
+                                                                        </select>
+                                                            </div>
+                                                            <div class="form-group">
                                                                 <label>{{ $title }} Name</label>
                                                                 <input wire:model="name" type="text" placeholder="Enter {{ $title }} Name" class="form-control">
                                                             </div>
@@ -65,6 +74,7 @@
                                 <tr>
                                     <th width="5%">No</th>
                                     <th>Name</th>
+                                    <th>Department</th>
                                     <th class="sorting" width="15%">Actions</th>
                                 </tr>
                             </thead>
@@ -73,6 +83,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $data->name }}</td>
+                                        <td>{{ $data->department->name }}</td>
                                         <td><a href="#" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-warning"><i class="fa fa-pencil"></i></a><a wire:click="destroy({{ $data->id }})" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
                                     </tr>
                                 @endforeach

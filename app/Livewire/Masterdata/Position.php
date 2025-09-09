@@ -4,16 +4,18 @@ namespace App\Livewire\Masterdata;
 
 use Livewire\Component;
 use App\Models\Position as PositionModel;
+use App\Models\Department;
 
 class Position extends Component
 {
-    public $name;
+    public $name, $department_id;
     public $updateMode = false;
 
     public function render()
     {
         return view('livewire.masterdata.position', [
             'datas' => PositionModel::all(),
+            'departments' => Department::all(),
             'title' => 'Position',
             'active' => 'position',
             'parent_menu' => 'Master Data',
@@ -31,6 +33,7 @@ class Position extends Component
     {
         $validatedData = $this->validate([
             'name' => 'required',
+            'department_id' => 'required',
         ]);
 
         PositionModel::create($validatedData);

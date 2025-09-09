@@ -7,7 +7,7 @@ use App\Models\Department as DepartmentModel;
 
 class Department extends Component
 {
-    public $name;
+    public $name, $dept_id;
     public $updateMode = false;
 
     public function render()
@@ -39,6 +39,16 @@ class Department extends Component
         $this->resetInputFields();
 
         return redirect()->route('department.index');
+    }
+
+    public function edit($id)
+    {
+        $dept = DepartmentModel::findOrFail($id);
+        $this->dept_id = $id;
+        $this->name = $dept->name;
+
+        $this->updateMode = true;
+        $this->emit('showModal');
     }
 
     public function destroy($id)

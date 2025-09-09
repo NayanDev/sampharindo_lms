@@ -26,38 +26,35 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-content p-5">
                         <div class="d-flex m-b-md">
-                            <div class="d-flex m-b-md">
-                                <button class="text-white btn rounded-0 btn-success" data-toggle="modal" href="#modal-form">Add {{ $title }}</button>
-                            </div>
+                            <button class="text-white btn rounded-0 btn-success" data-toggle="modal" href="#modal-form">Add {{ $title }}</button>
+                        </div>
 
-                                    <div id="modal-form" class="modal fade" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                    <div class="row">
-                                                        <div class="col-sm-12">
-                                                            <h3 class="m-t-none m-b">Add {{ $title }}</h3>
+                        <!-- Modal Form Add Data -->
+                        <div id="modal-form" class="modal fade" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3 class="m-t-none m-b">Add {{ $title }}</h3>
 
-                                                            <form wire:submit.prevent="store" role="#">
-                                                                <div class="form-group">
-                                                                    <label>{{ $title }} Name</label>
-                                                                    <input wire:model="name" type="text" placeholder="Enter {{ $title }} Name" class="form-control">
-                                                                </div>
-                                                                <div>
-                                                                    <div class="button-group pull-right">
-                                                                        <button class="btn btn-sm btn-success m-t-n-xs"
-                                                                            type="submit"><strong>Submit</strong></button>
-                                                                        <button class="btn btn-sm btn-danger m-t-n-xs"
-                                                                            data-dismiss="modal"><strong>Cancel</strong></button>
-                                                                    </div>
-                                                                </div>
-                                                            </form>
+                                                <form wire:submit.prevent="store" role="#">
+                                                    <div class="form-group">
+                                                        <label>{{ $title }} Name</label>
+                                                        <input wire:model="name" type="text" placeholder="Enter {{ $title }} Name" class="form-control">
+                                                    </div>
+                                                    <div>
+                                                        <div class="button-group pull-right">
+                                                            <button class="btn btn-sm btn-success m-t-n-xs" type="submit"><strong>Submit</strong></button>
+                                                            <button class="btn btn-sm btn-danger m-t-n-xs" data-dismiss="modal"><strong>Cancel</strong></button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="table-responsive">
@@ -74,12 +71,22 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $data->name }}</td>
-                                            <td><a href="#" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-warning"><i class="fa fa-pencil"></i></a><a wire:click="destroy({{ $data->id }})" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
+                                            <td>
+                                                <!-- Edit Button -->
+                                                <button wire:click="edit({{ $data->id }})" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-warning">
+                                                    <i class="fa fa-pencil"></i>
+                                                </button>
+
+                                                <!-- Delete Button -->
+                                                <a wire:click="destroy({{ $data->id }})" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-danger">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>
-
+                                    <!-- Optional footer for table (e.g., total) -->
                                 </tfoot>
                             </table>
                         </div>
@@ -91,7 +98,9 @@
 
     @push('script')
     <script type="text/javascript">
-        
+        Livewire.on('showModal', () => {
+            $('#modal-form').modal('show');
+        });
     </script>
     @endpush
 
