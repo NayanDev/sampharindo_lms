@@ -12,13 +12,14 @@ class Workshop extends Component
 
     public function render()
     {
-
         return view('livewire.masterdata.workshop', [
             'title' => 'Workshop',
-            'active' => 'workshop',
             'parent_menu' => 'Master Data',
             'datas' => WorkshopModel::all(),
             'departments' => Department::all(),
+        ])->layout('layout.main', [
+            'title' => 'Workshop',
+            'active' => 'workshop',
         ]);
     }
 

@@ -13,10 +13,14 @@ class Department extends Component
     public function render()
     {
         return view('livewire.masterdata.department', [
+        'datas' => DepartmentModel::all(),
+        'title' => 'Department',
+            'active' => 'department',
+            'parent_menu' => 'Master Data',
+        ])->layout('layout.main', [
             'title' => 'Department',
             'active' => 'department',
             'parent_menu' => 'Master Data',
-            'datas' => DepartmentModel::all(),
         ]);
     }
 

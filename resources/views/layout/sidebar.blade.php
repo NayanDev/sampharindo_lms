@@ -12,7 +12,7 @@
                 </div>
             </li>
             <li class="{{ ($active == "dashboard") ? 'active' : '' }}">
-                <a href="{{ route('dashboard') }}"><i class="fa fa-home"></i> <span class="nav-label">Dashboards</span> </a>
+                <a href="{{ route('dashboard.index') }}"><i class="fa fa-home"></i> <span class="nav-label">Dashboards</span> </a>
             </li>
             <li class="{{ ($active == "department" || $active == "position" || $active == "qualification" || $active == "employee" || $active == "workshop") ? 'active' : '' }}">
                 <a href="#"><i class="fa fa-database"></i> <span class="nav-label">Master Data</span><span class="fa arrow"></span></a>

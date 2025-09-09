@@ -45,7 +45,8 @@
                 </nav>
             </div>
 
-            @yield('container')
+            {{-- @yield('container') --}}
+            {{ $slot }}
 
             @include('layout.footer')
 

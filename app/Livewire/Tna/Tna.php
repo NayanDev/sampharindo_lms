@@ -14,6 +14,9 @@ class Tna extends Component
             'title' => 'Training Need',
             'active' => 'tna',
             'datas' => Training::all(),
+            ])->layout('layout.main', [
+            'title' => 'Training Need',
+            'active' => 'tna',
         ]);
     }
 }

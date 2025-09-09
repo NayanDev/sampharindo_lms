@@ -13,10 +13,13 @@ class Position extends Component
     public function render()
     {
         return view('livewire.masterdata.position', [
+            'datas' => PositionModel::all(),
             'title' => 'Position',
             'active' => 'position',
             'parent_menu' => 'Master Data',
-            'datas' => PositionModel::all(),
+        ])->layout('layout.main', [
+            'title' => 'Position',
+            'active' => 'position',
         ]);
     }
 

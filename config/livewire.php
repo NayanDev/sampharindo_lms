@@ -38,8 +38,8 @@ return [
     |
     */
 
-    'layout' => 'components.layouts.app',
-    // 'layout' => 'layout.main',
+    // 'layout' => 'components.layouts.app',
+    'layout' => 'layout.main',
 
     /*
     |---------------------------------------------------------------------------

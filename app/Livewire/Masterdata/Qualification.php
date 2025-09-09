@@ -14,9 +14,11 @@ class Qualification extends Component
     {
         return view('livewire.masterdata.qualification', [
             'title' => 'Qualification',
-            'active' => 'qualification',
             'parent_menu' => 'Master Data',
             'datas' => QualificationModel::all(),
+        ])->layout('layout.main', [
+            'title' => 'Qualification',
+            'active' => 'qualification',
         ]);
     }
 

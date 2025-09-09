@@ -16,13 +16,17 @@ class Employee extends Component
     {
 
         return view('livewire.masterdata.employee', [
-            'title' => 'Employee',
-            'active' => 'employee',
-            'parent_menu' => 'Master Data',
             'datas' => EmployeeModel::all(),
             'departments' => Department::all(),
             'positions' => Position::all(),
             'qualifications' => Qualification::all(),
+            'title' => 'Employee',
+            'active' => 'employee',
+            'parent_menu' => 'Master Data',
+            ])->layout('layout.main', [
+            'title' => 'Employee',
+            'active' => 'employee',
+            'parent_menu' => 'Master Data',
         ]);
     }
 

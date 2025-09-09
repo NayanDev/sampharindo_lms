@@ -10,6 +10,7 @@ use App\Livewire\Masterdata\Employee;
 use App\Livewire\Masterdata\Workshop;
 use App\Livewire\Tna\Tna;
 use App\Livewire\Tna\Tnadetail;
+use App\Livewire\Dashboard;
 
 Route::get('/', [AuthController::class, 'index'])->middleware('guest');
 Route::get('login', [AuthController::class, 'index'])->name('login')->middleware('guest');
@@ -18,7 +19,7 @@ Route::post('login', [AuthController::class, 'authenticate']);
 Route::group(['middleware' => 'guest'], function()
 {
     Route::post('logout', [AuthController::class, 'logout']);
-    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('dashboard', Dashboard::class)->name('dashboard.index');
 
     ### Master Data ###
     // Route Department
