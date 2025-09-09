@@ -9,7 +9,9 @@ class Training extends Model
     protected $fillable = [
         'year',
         'status',
-        'description'
+        'description',
+        'user_id',
+
     ];
 
     public function user()

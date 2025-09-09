@@ -7,16 +7,21 @@ use App\Models\Employee as EmployeeModel;
 use App\Models\Department;
 use App\Models\Position;
 use App\Models\Qualification;
+use Livewire\WithPagination;
 
 class Employee extends Component
 {
+    use WithPagination;
+
     public $first_name, $last_name, $email, $phone_number, $gender, $department_id, $position_id, $qualification_id;
 
+    public $perPage = 10;
+    
     public function render()
     {
 
         return view('livewire.masterdata.employee', [
-            'datas' => EmployeeModel::all(),
+            'datas' => EmployeeModel::paginate($this->perPage),
             'departments' => Department::all(),
             'positions' => Position::all(),
             'qualifications' => Qualification::all(),

@@ -26,14 +26,14 @@
                     <div class="ibox-content">
                         <div class="form-group">
                                                                 <label>Year</label>
-                                                                <input readonly value="TNA - {{ date('Y') }}" wire:model="year" type="text"
+                                                                <input readonly wire:model="year" type="text"
                                                                             placeholder="Enter First Name"
                                                                             class="form-control">
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <label>Remake</label>
-                                                                <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                                                                <textarea wire:model="description" class="form-control" id="" cols="30" rows="10"></textarea>
                                                             </div>
                     </div>
                 </div>

@@ -35,15 +35,17 @@
                                                         <h3 class="m-t-none m-b">Add {{ $title }}</h3>
 
                                                         <form wire:submit.prevent="store" role="#">
+
+                                                            <input wire:model="user_id" type="hidden" class="form-control">
                                                             
                                                             <div class="form-group">
                                                                 <label>Year</label>
-                                                                <input readonly value="TNA - {{ date('Y') }}" wire:model="year" type="text" placeholder="Enter Training Year" class="form-control">
+                                                                <input readonly wire:model="year" type="text" placeholder="Enter Training Year" class="form-control">
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <label>Description</label>
-                                                                <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                                                                <textarea wire:model="description" class="form-control" id="" cols="30" rows="10"></textarea>
                                                             </div>
 
                                                             <div>

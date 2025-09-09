@@ -69,13 +69,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach($datas as $data)
+                                @foreach($datas as $data)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $data->name }}</td>
                                         <td><a href="#" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-warning"><i class="fa fa-pencil"></i></a><a wire:click="destroy({{ $data->id }})" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                             <tfoot>
 

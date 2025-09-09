@@ -8,6 +8,14 @@ use App\Models\Training;
 
 class Tnadetail extends Component
 {
+    public $year, $status, $description, $user_id;
+
+    public function mount()
+    {
+        $this->year = 'testing 2025'; // atau '2025'
+        $this->description = 'testing';
+    }
+
     public function render()
     {
         return view('livewire.tna.tnadetail', [
@@ -19,4 +27,6 @@ class Tnadetail extends Component
             'active' => 'tna',
         ]);
     }
+
+    
 }

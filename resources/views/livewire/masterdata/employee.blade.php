@@ -166,10 +166,12 @@
                                         <td>{{ $data->qualification->name }}</td>
                                         <td><a href="#" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-warning"><i class="fa fa-pencil"></i></a><a wire:click="destroy({{ $data->id }})" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
                                     </tr>
-                                @endforeach
+                                @endforeach    
                             </tbody>
                             <tfoot>
-
+                                <tr>
+                                    <td colspan="7">{{ $datas->links() }}</td>
+                                </tr>
                             </tfoot>
                         </table>
                     </div>

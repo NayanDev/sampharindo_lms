@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
             PositionSeeder::class,
             QualificationSeeder::class,
             WorkshopSeeder::class,
+            UserSeeder::class,
+            EmployeeSeeder::class,
         ]);
     }
 }
