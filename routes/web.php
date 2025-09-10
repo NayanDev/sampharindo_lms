@@ -43,6 +43,9 @@ Route::group(['middleware' => 'guest'], function()
     Route::get('tna', Tna::class)->name('tna.index');
 
     // Route Detail Training
-    Route::get('tna/{id}', Tnadetail::class)->name('tna.detail');
+    Route::get('tna/{id}/detail/', Tnadetail::class)->name('tna.detail');
+
+    // Route Recap Training
+    Route::get('tna/{id}/recap', Dashboard::class)->name('tna.recap');
 
 });

@@ -89,7 +89,8 @@
     <script src="{{ asset('assets/js/demo/sparkline-demo.js') }}"></script>
 
     <!-- ChartJS-->
-    <script src="{{ asset('assets/js/plugins/chartJs/Chart.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/plugins/chartJs/Chart.min.js') }}"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Toastr -->
     <script src="{{ asset('assets/js/plugins/toastr/toastr.min.js') }}"></script>

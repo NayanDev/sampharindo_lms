@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('employee_id')->constrained('employees')->onDelete('cascade');
             $table->foreignId('training_id')->constrained('trainings')->onDelete('cascade');
             $table->enum('status', ['draft', 'approve', 'open'])->default('draft');
+            $table->enum('planning', ['planned', 'unplanned']);
             $table->unsignedBigInteger('request_by');
             $table->date('workshop_date');
             // $table->foreign('request_by')->references('id')->on('users')->onDelete('set null');

@@ -8,7 +8,7 @@ use App\Models\Training;
 
 class Tnadetail extends Component
 {
-    public $year, $status, $description, $user_id;
+    public $year, $status, $description, $user_id, $planned = 'planned', $unplanned = 'unplanned';
 
     public function mount()
     {

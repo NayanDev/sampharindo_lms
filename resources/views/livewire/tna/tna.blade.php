@@ -86,7 +86,7 @@
                                         <td>{{ $data->status }}</td>
                                         <td>{{ $data->description }}</td>
                                         <td>{{ $data->user->name }}</td>
-                                        <td><a href="#" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-warning"><i class="fa fa-pencil"></i></a><a wire:click="destroy({{ $data->id }})" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-danger"><i class="fa fa-trash"></i></a><a href="/tna/{{ $data->id }}" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-success"><i class="fa fa-eye"></i></a></td>
+                                        <td><a href="#" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-warning"><i class="fa fa-pencil"></i></a><a wire:click="destroy({{ $data->id }})" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-danger"><i class="fa fa-trash"></i></a><a href="/tna/{{ $data->id }}/detail" class="text-white m-xxs btn btn-rounded-0 btn-xs btn-success"><i class="fa fa-eye"></i></a></td>
                                     </tr>
                                 @endforeach
                             </tbody>
